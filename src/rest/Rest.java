@@ -12,44 +12,57 @@ import java.net.URL;
 
 public class Rest {
 
-  
+
     public static void main(String[] args) 
     {
         
         String output;
        rest_grafica r=new rest_grafica();
-        r.show();
-      
-      
-         try {
+       Rest_Get rG=new Rest_Get(r);
 
-		URL url = new URL("http://localhost:8080/api/tutorial/1.0/employees");
+   
+        
+        
+      
+      
+    }
+    
+    
+    
+}
+
+
+
+
+/*
+	  try {
+
+		URL url = new URL("http://localhost:8080/RESTfulExample/json/product/post");
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-		conn.setRequestMethod("GET");
-		conn.setRequestProperty("Accept", "application/json");
+		conn.setDoOutput(true);
+		conn.setRequestMethod("POST");
+		conn.setRequestProperty("Content-Type", "application/json");
 
-		if (conn.getResponseCode() != 200) {
+		String input = "{\"qty\":100,\"name\":\"iPad 4\"}";
+
+		OutputStream os = conn.getOutputStream();
+		os.write(input.getBytes());
+		os.flush();
+
+		if (conn.getResponseCode() != HttpURLConnection.HTTP_CREATED) {
 			throw new RuntimeException("Failed : HTTP error code : "
-					+ conn.getResponseCode());
+				+ conn.getResponseCode());
 		}
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(
-			(conn.getInputStream())));
+				(conn.getInputStream())));
 
-		
+		String output;
 		System.out.println("Output from Server .... \n");
 		while ((output = br.readLine()) != null) {
-                    
-                    
 			System.out.println(output);
-                        r.a(output);
-                        return;
-                        
 		}
-             
-                
-                   r.a(output);
-                    
+
 		conn.disconnect();
 
 	  } catch (MalformedURLException e) {
@@ -60,15 +73,7 @@ public class Rest {
 
 		e.printStackTrace();
 
-	  }
-         
-        
-         
-         
-         
-         
-         
-         
-    }
-    
-}
+	 }
+
+	}
+*/
