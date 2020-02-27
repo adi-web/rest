@@ -5,83 +5,41 @@
  */
 package rest;
 
+public class json_employeer {
 
-public class json_employeer 
-{
-     int employeeId=105;
-   String firstName;
-  String lastName="mucaj";
-  String email="ssss";
-  String phone="34563026";
+    int employeeId;
+    String firstName;
+    String lastName;
+    String email;
+    String phone;
 
-    public json_employeer(String text) {
-        this.firstName=text;
+    public json_employeer() {
+
     }
 
-    json_employeer() {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setEmployeeId(String employeeId) {
+        this.employeeId = Integer.parseInt(employeeId);
     }
 
-   
-  
-  
-  @Override
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    @Override
     public String toString() {
-        return "{\"employeeId\": "+ employeeId +",\"firstName\": \""+ firstName +"\",\"lastName\": \""+ lastName +"\",\"email\": \""+ email +"\",\"phone\": \""+ phone +"\"}";
+        return "{\"employeeId\": " + employeeId + ",\"firstName\": \"" + firstName + "\",\"lastName\": \"" + lastName + "\",\"email\": \"" + email + "\",\"phone\": \"" + phone + "\"}";
     }
-    
-  
+
 }
-
-
-
-/*
-
- public String GetR(String u) {
-        try {
-
-            URL url = new URL(u);
-            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            conn.setDoOutput(true);
-            conn.setRequestMethod("POST");
-            conn.setRequestProperty("Content-Type", "application/json");
-
-            OutputStream os = conn.getOutputStream();
-            os.write(j.getBytes());
-            os.flush();
-
-            if (conn.getResponseCode() != 201) {
-                throw new RuntimeException("Failed : HTTP error code : "
-                        + conn.getResponseCode());
-            }
-
-            BufferedReader br = new BufferedReader(new InputStreamReader(
-                    (conn.getInputStream())));
-
-            System.out.println("Output from Server .... \n");
-            String output;
-
-            while ((output = br.readLine()) != null) {
-
-                System.out.println(output);
-
-                //r.jTextArea1.setText(output);
-                //return output;
-                return null;
-            }
-
-            conn.disconnect();
-
-        } catch (MalformedURLException e) {
-
-            e.printStackTrace();
-
-        } catch (IOException e) {
-
-            e.printStackTrace();
-
-        }
-        return null;
-
-    }
-*/
